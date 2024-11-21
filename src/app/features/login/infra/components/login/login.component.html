@@ -1,39 +1,43 @@
-<aplz-ui-logo size="lg"></aplz-ui-logo>
+<main class="mx-auto max-w-screen-sm grid gap-y-16 px-4 py-10">
+  <aplz-ui-logo size="lg"></aplz-ui-logo>
 
-<form [formGroup]="form" (ngSubmit)="login()">
-  <div class="grid gap-6 mb-6 md:grid-cols-2">
-    <div>
-      <label for="username" class="block mb-2 text-sm font-medium text-dark">
-        Correo electrónico
-      </label>
-      <input
-        type="text"
+  <h2 class="text-center text-2xl font-medium max-w-64 mx-auto">
+    Iniciar sesión como comerciante
+  </h2>
+
+  <form class="grid gap-y-16" [formGroup]="form" (ngSubmit)="login()">
+    <div class="grid gap-y-16">
+      <aplz-ui-outlined-text-field
+        aplazoNoWhiteSpace
+        aplazoLowercase
+        label="Correo electrónico o Usuario"
         id="username"
-        class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
-        placeholder="my_example_username"
-        formControlName="username"
-      />
-    </div>
-    <div>
-      <label for="password" class="block mb-2 text-sm font-medium text-dark">
-        Password
-      </label>
-      <input
-        type="password"
+        placeholder="Escribe tu correo electrónico"
+        [control]="username"
+        [error]="username.invalid && username.touched"
+        [helperText]="username.touched ? username.getError('custom') : ''"
+      >
+      </aplz-ui-outlined-text-field>
+
+      <aplz-ui-outlined-text-field
+        label="Contraseña"
         id="password"
-        class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
-        placeholder="•••••••••"
-        formControlName="password"
-      />
+        type="password"
+        placeholder="Escribe tu contraseña"
+        [control]="password"
+        [error]="password.invalid && password.touched"
+        [helperText]="password.touched ? password.getError('custom') : ''"
+      ></aplz-ui-outlined-text-field>
     </div>
-  </div>
-  <button
-    aplzButton
-    aplzAppearance="stroked"
-    aplzColor="dark"
-    size="md"
-    type="submit"
-  >
-    Entrar
-  </button>
-</form>
+    <button
+      [rounded]="true"
+      aplzButton
+      aplzAppearance="stroked"
+      aplzColor="dark"
+      size="md"
+      type="submit"
+    >
+      Iniciar sesión
+    </button>
+  </form>
+</main>

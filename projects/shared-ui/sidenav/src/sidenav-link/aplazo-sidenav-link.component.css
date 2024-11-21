@@ -11,7 +11,7 @@
 }
 
 .aplazo-sidenav-link__label {
-  @apply ml-5 max-w-[24ch] pr-5;
+  @apply ml-5 max-w-[24ch] pr-5 flex gap-2;
 }
 
 .aplazo-sidenav-link__label-pretty {

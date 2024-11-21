@@ -1,0 +1,11 @@
+.base-text-field {
+  @apply relative mt-6;
+}
+
+.base-text-field__label {
+  @apply absolute -top-2 left-4 px-1 text-sm font-medium text-dark-primary bg-white transform -translate-y-1/2;
+}
+
+.base-text-field__input {
+  @apply outline-none border-transparent w-full p-3 border rounded-lg;
+}

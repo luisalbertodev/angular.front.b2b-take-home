@@ -1,0 +1,35 @@
+<div class="outlined-text-field">
+  <label *ngIf="label" [for]="id" [ngClass]="labelClass">
+    {{ label }}
+  </label>
+  <div class="input-container">
+    <input
+      #inputElement
+      [type]="isPasswordVisible && type === 'password' ? 'text' : type"
+      [id]="id"
+      [placeholder]="placeholder"
+      [formControl]="control"
+      [ngClass]="inputClass"
+    />
+
+    <ng-container *ngIf="type === 'password'">
+      <button
+        type="button"
+        class="outlined-text-field__icon-button"
+        (click)="togglePasswordVisibility()"
+        [attr.aria-label]="passwordToggleAltText"
+      >
+        <img
+          [src]="passwordToggleIcon"
+          [alt]="passwordToggleAltText"
+          class="outlined-text-field__icon"
+        />
+      </button>
+    </ng-container>
+  </div>
+  <ng-container *ngIf="helperText">
+    <div [ngClass]="helperTextClass">
+      {{ helperText }}
+    </div>
+  </ng-container>
+</div>

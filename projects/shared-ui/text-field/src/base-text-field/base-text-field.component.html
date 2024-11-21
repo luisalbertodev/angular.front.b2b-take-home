@@ -1,0 +1,17 @@
+<div class="base-text-field">
+  <label *ngIf="label" [for]="id" [ngClass]="labelClass">
+    {{ label }}
+  </label>
+  <input
+    [type]="type"
+    [id]="id"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [ngClass]="inputClass"
+  />
+  <ng-container *ngIf="helperText">
+    <div [ngClass]="helperTextClass">
+      {{ helperText }}
+    </div>
+  </ng-container>
+</div>

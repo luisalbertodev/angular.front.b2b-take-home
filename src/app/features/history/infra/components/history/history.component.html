@@ -1,0 +1,38 @@
+<section class="p-6">
+  <div class="bg-white border-dark-disabled border rounded-md shadow-lg">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="text-dark-secondary text-sm">
+          <th class="py-3 px-4 font-normal">NÚMERO DE PEDIDO</th>
+          <th class="py-3 px-4 font-normal">FECHA</th>
+          <th class="py-3 px-4 font-normal">ESTADO</th>
+          <th class="py-3 px-4 font-normal">MONTOS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="history$ | async as history">
+          <tr
+            *ngFor="let item of history"
+            class="border-b border-b-dark-disabled last:border-none text-dark-primary text-sm hover:bg-aplazo-bg"
+          >
+            <td class="py-3 px-4">{{ item.loanId }}</td>
+            <td class="py-3 px-4 text-dark-secondary">
+              {{ item.updatedAt | date : "dd/MM/yy, HH:mm" : "es-MX" }}
+            </td>
+            <td class="py-3 px-4">
+              <span
+                [ngClass]="getStatusClass(item.status)"
+                class="font-medium px-3 py-1 rounded-sm"
+              >
+                {{ getStatusText(item.status) }}
+              </span>
+            </td>
+            <td class="py-3 px-4 text-dark-secondary">
+              {{ item.price | mxCurrency }}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</section>

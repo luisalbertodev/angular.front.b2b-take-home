@@ -20,7 +20,8 @@
       "@apz/shared-ui/button": ["./dist/shared-ui/button"],
       "@apz/shared-ui/logo": ["./dist/shared-ui/logo"],
       "@apz/shared-ui/sidenav": ["./dist/shared-ui/logo"],
-      "@apz/shared-ui/dashboard": ["./dist/shared-ui/dashboard"]
+      "@apz/shared-ui/dashboard": ["./dist/shared-ui/dashboard"],
+      "@apz/shared-ui/text-field": ["./dist/shared-ui/text-field"]
     },
     "importHelpers": true,
     "target": "ES2022",

@@ -1,0 +1,38 @@
+<section class="p-4 bg-light-background" *ngIf="summary$ | async as summary">
+  <h2 class="text-lg font-semibold text-dark-primary mb-4">
+    RESUMEN DE PEDIDOS
+  </h2>
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-dark-primary text-light-white rounded-lg p-4 max-md:divide-y md:divide-x"
+  >
+    <!-- Total Sales -->
+    <div class="flex flex-col">
+      <span class="text-sm font-medium text-light-secondary"
+        >TOTAL DE VENTAS</span
+      >
+      <span class="text-2xl font-bold mt-2 text-light-primary">
+        {{ summary.totalSales | mxCurrency }}
+      </span>
+    </div>
+
+    <!-- Order Count -->
+    <div class="flex flex-col max-md:pt-6 md:pl-6">
+      <span class="text-sm font-medium text-light-secondary"
+        >NÚMERO DE PEDIDOS</span
+      >
+      <span class="text-2xl font-bold mt-2 text-light-primary">
+        {{ summary.orderCount }}
+      </span>
+    </div>
+
+    <!-- Average Ticket -->
+    <div class="flex flex-col max-md:pt-6 md:pl-6">
+      <span class="text-sm font-medium text-light-secondary"
+        >TICKET PROMEDIO</span
+      >
+      <span class="text-2xl font-bold mt-2 text-light-primary">
+        {{ summary.averageTicket | mxCurrency }}
+      </span>
+    </div>
+  </div>
+</section>

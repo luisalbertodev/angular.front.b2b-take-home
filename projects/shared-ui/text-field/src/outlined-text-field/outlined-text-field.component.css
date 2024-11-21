@@ -1,0 +1,42 @@
+.outlined-text-field {
+  @apply relative mt-0;
+}
+
+.outlined-text-field__label {
+  @apply absolute z-10 top-0 left-4 px-1 text-sm font-medium text-dark-primary bg-white transform -translate-y-1/2;
+}
+
+.outlined-text-field__input {
+  @apply outline-none w-full p-3 border-none rounded-lg ring-1 ring-dark-primary pr-10;
+}
+
+.input-container {
+  @apply relative;
+}
+
+.outlined-text-field__icon-button {
+  @apply absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer flex items-center justify-center;
+  width: 24px;
+  height: 24px;
+}
+
+.outlined-text-field__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.outlined-text-field__input--error {
+  @apply border-special-danger ring-special-danger;
+}
+
+.outlined-text-field__helper-text {
+  @apply mt-1 text-dark-primary text-sm;
+}
+
+.outlined-text-field__helper-text--error {
+  @apply mt-1 text-special-danger text-sm;
+}
+
+.outlined-text-field__label--error {
+  @apply text-special-danger;
+}
